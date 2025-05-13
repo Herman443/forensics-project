@@ -2,6 +2,8 @@
 
 This project is a simple forensic analysis tool for examining raw LittleFS flash images. It can search for deleted file content, dump raw flash data, and demonstrate that **deleted files in LittleFS may remain recoverable** from unreferenced flash blocks.
 
+Due to API limitations in the official littlefs-python library, it is not possible to mount and list files from an image that was generated externally (e.g., in C). The library only supports creating and managing LittleFS instances from within Python, not parsing arbitrary on-disk images. As a result, this tool focuses on raw image analysis — including metadata inspection, string search, and validation of undeleted file content — which still provides meaningful forensic insight.
+
 ---
 
 ## Features
